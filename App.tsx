@@ -250,8 +250,8 @@ const App: React.FC = () => {
             className="flex items-center gap-3 cursor-pointer group"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
-            <div className="w-10 h-10 lg:w-12 lg:h-12 bg-orange-600 rounded-xl flex items-center justify-center text-white font-black shadow-lg transition-transform group-hover:rotate-12">P</div>
-            <span className="text-xl lg:text-2xl font-black tracking-tighter font-heavy uppercase">Pray4India</span>
+            <div className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 bg-orange-600 rounded-xl flex items-center justify-center text-white font-black shadow-lg transition-transform group-hover:rotate-12">P</div>
+            <span className="text-lg md:text-xl lg:text-2xl font-black tracking-tighter font-heavy uppercase">Pray4India</span>
           </motion.div>
 
           <nav className="hidden lg:flex gap-10 items-center">
@@ -282,14 +282,14 @@ const App: React.FC = () => {
           </nav>
 
           <div className="flex lg:hidden items-center gap-2">
-            <button onClick={() => setShowMobileLang(!showMobileLang)} className="p-3 bg-slate-100 dark:bg-slate-900 rounded-xl text-orange-600 border border-slate-200 dark:border-slate-800">
-              <Globe className="w-5 h-5" />
+            <button onClick={() => setShowMobileLang(!showMobileLang)} className="p-2 bg-slate-100 dark:bg-slate-900 rounded-xl text-orange-600 border border-slate-200 dark:border-slate-800">
+              <Globe className="w-4 h-4 md:w-5 md:h-5" />
             </button>
-            <button onClick={() => setIsDarkMode(!isDarkMode)} className="p-3 bg-slate-100 dark:bg-slate-900 rounded-xl text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800">
-              {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+            <button onClick={() => setIsDarkMode(!isDarkMode)} className="p-2 bg-slate-100 dark:bg-slate-900 rounded-xl text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800">
+              {isDarkMode ? <Sun className="w-4 h-4 md:w-5 md:h-5" /> : <Moon className="w-4 h-4 md:w-5 md:h-5" />}
             </button>
-            <button onClick={() => scrollToSection('join')} className="p-3 bg-orange-600 rounded-xl text-white">
-              <MessageCircle className="w-5 h-5" />
+            <button onClick={() => scrollToSection('join')} className="p-2 bg-orange-600 rounded-xl text-white">
+              <MessageCircle className="w-4 h-4 md:w-5 md:h-5" />
             </button>
           </div>
         </div>
