@@ -26,16 +26,15 @@ import { translations } from './translations';
 
 // Localized WhatsApp Group Links
 const WHATSAPP_GROUP_LINKS: Record<Language, string> = {
-  'English': 'https://chat.whatsapp.com/ExampleEnglish',
-  'Hindi': 'https://chat.whatsapp.com/ExampleHindi',
-  'French': 'https://chat.whatsapp.com/ExampleFrench',
-  'German': 'https://chat.whatsapp.com/ExampleGerman',
-  'Portuguese': 'https://chat.whatsapp.com/ExamplePortuguese',
-  'Japanese': 'https://chat.whatsapp.com/ExampleJapanese',
-  'Chinese': 'https://chat.whatsapp.com/ExampleChinese',
-  'Pidgin': 'https://chat.whatsapp.com/ExamplePidgin',
-  'Urdu': 'https://chat.whatsapp.com/ExampleUrdu',
-  'Korean': 'https://chat.whatsapp.com/ExampleKorean',
+  'English': 'https://chat.whatsapp.com/BoEw78jYgKQHlhyUbFm2ze',
+  'Hindi': 'https://chat.whatsapp.com/D2nMQpoFjgrF1hbLf5b8qh',
+  'French': 'https://chat.whatsapp.com/BfhKV1ybHIHD9Tb979Gs38',
+  'German': 'https://chat.whatsapp.com/BQfWQTRJmJs8v0mFYZc5Tc',
+  'Portuguese': 'https://chat.whatsapp.com/C48IPsuZN7R47AsSZziQ68',
+  'Chinese': 'https://chat.whatsapp.com/L16t96yluFKIiNiuYkyheC',
+  'Pidgin': 'https://chat.whatsapp.com/G3QEezwfmo5DNQa8L3B923',
+  'Urdu': 'https://chat.whatsapp.com/EA6tCQ1fK4PF8wfHReqmOU',
+  'Korean': 'https://chat.whatsapp.com/LlkyEUrFCnh2lj0KG0JFkG',
 };
 
 const FloatingParticles: React.FC<{ count?: number; color?: string; blur?: string; speedRange?: [number, number] }> = ({

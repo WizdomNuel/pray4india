@@ -373,7 +373,7 @@ export const translations: Record<Language, any> = {
     contact: { title: "Contatti", desc: "Domande?", name: "Nome", email: "Email", subject: "Oggetto", message: "Messaggio", submit: "Invia", success: "Inviato!", support: "Supporto", globalLabel: "Presenza", globalValue: "10 Flussi" },
     footer: { desc: "Preghiere Unificate.", resources: "Risorse", copyright: "Pray4India International.", intercessors: "Intercessori", streamActive: "Flusso Attivo", connect: "Connetti" }
   }, */
-  Japanese: {
+  /* Japanese: {
     nav: { how: "仕組み", benefits: "メリット", join: "参加", contact: "連絡先", process: "プロセス", perks: "特典", groups: "グループ", feed: "フィード", support: "サポート", privacy: "プライバシー", terms: "利用規約", about: "私たちについて" },
     hero: {
       tag: "世界的とりなし", title: "破れ目に立つ、", titleItalic: "毎日。",
@@ -405,7 +405,7 @@ export const translations: Record<Language, any> = {
     },
     contact: { title: "連絡先", desc: "質問は？", name: "名前", email: "メール", subject: "件名", message: "メッセージ", submit: "送信", success: "送信完了！", support: "サポート", globalLabel: "展開", globalValue: "10 ストリーム" },
     footer: { desc: "統一された祈り。", resources: "リソース", copyright: "Pray4India International.", intercessors: "とりなし手", streamActive: "ストリーム有効", connect: "接続" }
-  },
+  }, */
   /* Arabic: {
     nav: { how: "كيف يعمل", benefits: "المزايا", join: "انضم", contact: "اتصل بنا", process: "العملية", perks: "الميزات", groups: "المجموعات", feed: "التغذية", support: "الدعم", privacy: "الخصوصية", terms: "الشروط", about: "عنا" },
     hero: {

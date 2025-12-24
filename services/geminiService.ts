@@ -58,13 +58,6 @@ const FALLBACK_PRAYERS: Record<string, PrayerPoint> = {
     prayerText: 'Signore, preghiamo per la sicurezza e il benessere di tutti gli abitanti di Delhi. Proteggi le famiglie e guida i leader cittadini.',
     language: 'Italian'
   },
-  'Japanese': {
-    region: 'ラージャスターン',
-    topic: '水資源の保護',
-    scripture: 'イザヤ書 41:18',
-    prayerText: '主よ、ラージャスターンの水資源のために祈ります。乾いた地に恵みの雨を降らせ、人々に必要な水が供給されますように।',
-    language: 'Japanese'
-  },
   'Arabic': {
     region: 'كيرالا',
     topic: 'السلام المجتمعي',
