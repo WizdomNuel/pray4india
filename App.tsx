@@ -36,6 +36,9 @@ const WHATSAPP_GROUP_LINKS: Record<Language, string> = {
   'Japanese': 'https://chat.whatsapp.com/ExampleJapanese',
   'Arabic': 'https://chat.whatsapp.com/ExampleArabic',
   'Chinese': 'https://chat.whatsapp.com/ExampleChinese',
+  'Pidgin': 'https://chat.whatsapp.com/ExamplePidgin',
+  'Urdu': 'https://chat.whatsapp.com/ExampleUrdu',
+  'Korean': 'https://chat.whatsapp.com/ExampleKorean',
 };
 
 const FloatingParticles: React.FC<{ count?: number; color?: string; blur?: string; speedRange?: [number, number] }> = ({

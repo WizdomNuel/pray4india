@@ -7,27 +7,33 @@ export interface PrayerPoint {
   language: string;
 }
 
-export type Language = 
-  | 'English' 
-  | 'Hindi' 
-  | 'French' 
-  | 'German' 
-  | 'Portuguese' 
+export type Language =
+  | 'English'
+  | 'Hindi'
+  | 'French'
+  | 'German'
+  | 'Portuguese'
   | 'Spanish'
   | 'Italian'
   | 'Japanese'
   | 'Arabic'
-  | 'Chinese';
+  | 'Chinese'
+  | 'Pidgin'
+  | 'Urdu'
+  | 'Korean';
 
 export const LANGUAGES: Language[] = [
-  'English', 
-  'Hindi', 
-  'French', 
-  'German', 
-  'Portuguese', 
-  'Spanish', 
-  'Italian', 
-  'Japanese', 
-  'Arabic', 
-  'Chinese'
+  'English',
+  'Hindi',
+  'French',
+  'German',
+  'Portuguese',
+  'Spanish',
+  'Italian',
+  'Japanese',
+  'Arabic',
+  'Chinese',
+  'Pidgin',
+  'Urdu',
+  'Korean'
 ];
