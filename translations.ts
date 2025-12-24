@@ -307,7 +307,7 @@ export const translations: Record<Language, any> = {
     contact: { title: "Contato", desc: "Perguntas? Estamos aqui.", name: "Nome", email: "Email", subject: "Assunto", message: "Mensagem", submit: "Enviar", success: "Enviado!", support: "Suporte", globalLabel: "Presença", globalValue: "10 Fluxos" },
     footer: { desc: "Orações Unificadas.", resources: "Recursos", copyright: "Pray4India International.", intercessors: "Intercessores", streamActive: "Fluxo Ativo", connect: "Conectar" }
   },
-  Spanish: {
+  /* Spanish: {
     nav: { how: "Cómo funciona", benefits: "Beneficios", join: "Únete", contact: "Contacto", process: "Proceso", perks: "Ventajas", groups: "Grupos", feed: "Feed", support: "Soporte", privacy: "Privacidad", terms: "Términos", about: "Nosotros" },
     hero: {
       tag: "Intercesión Global", title: "Ponte en la brecha,", titleItalic: "Diariamente.",
@@ -339,8 +339,8 @@ export const translations: Record<Language, any> = {
     },
     contact: { title: "Contacto", desc: "¿Preguntas?", name: "Nombre", email: "Email", subject: "Asunto", message: "Mensaje", submit: "Enviar", success: "Enviado!", support: "Soporte", globalLabel: "Presencia", globalValue: "10 Flujos" },
     footer: { desc: "Oraciones Unificadas.", resources: "Recursos", copyright: "Pray4India International.", intercessors: "Intercesores", streamActive: "Flujo Activo", connect: "Conectar" }
-  },
-  Italian: {
+  }, */
+  /* Italian: {
     nav: { how: "Come funziona", benefits: "Vantaggi", join: "Iscriviti", contact: "Contatti", process: "Processo", perks: "Vantaggi", groups: "Gruppi", feed: "Feed", support: "Supporto", privacy: "Privacy", terms: "Termini", about: "Chi siamo" },
     hero: {
       tag: "Intercessione Globale", title: "Mettiti sulla breccia,", titleItalic: "Ogni giorno.",
@@ -372,7 +372,7 @@ export const translations: Record<Language, any> = {
     },
     contact: { title: "Contatti", desc: "Domande?", name: "Nome", email: "Email", subject: "Oggetto", message: "Messaggio", submit: "Invia", success: "Inviato!", support: "Supporto", globalLabel: "Presenza", globalValue: "10 Flussi" },
     footer: { desc: "Preghiere Unificate.", resources: "Risorse", copyright: "Pray4India International.", intercessors: "Intercessori", streamActive: "Flusso Attivo", connect: "Connetti" }
-  },
+  }, */
   Japanese: {
     nav: { how: "仕組み", benefits: "メリット", join: "参加", contact: "連絡先", process: "プロセス", perks: "特典", groups: "グループ", feed: "フィード", support: "サポート", privacy: "プライバシー", terms: "利用規約", about: "私たちについて" },
     hero: {
@@ -406,7 +406,7 @@ export const translations: Record<Language, any> = {
     contact: { title: "連絡先", desc: "質問は？", name: "名前", email: "メール", subject: "件名", message: "メッセージ", submit: "送信", success: "送信完了！", support: "サポート", globalLabel: "展開", globalValue: "10 ストリーム" },
     footer: { desc: "統一された祈り。", resources: "リソース", copyright: "Pray4India International.", intercessors: "とりなし手", streamActive: "ストリーム有効", connect: "接続" }
   },
-  Arabic: {
+  /* Arabic: {
     nav: { how: "كيف يعمل", benefits: "المزايا", join: "انضم", contact: "اتصل بنا", process: "العملية", perks: "الميزات", groups: "المجموعات", feed: "التغذية", support: "الدعم", privacy: "الخصوصية", terms: "الشروط", about: "عنا" },
     hero: {
       tag: "شفاعة عالمية", title: "قف في الثغرة،", titleItalic: "يومياً.",
@@ -438,7 +438,7 @@ export const translations: Record<Language, any> = {
     },
     contact: { title: "اتصل بنا", desc: "أسئلة؟", name: "الاسم", email: "البريد", subject: "الموضوع", message: "الرسالة", submit: "إرسال", success: "تم الإرسال!", support: "دعم", globalLabel: "تواجد", globalValue: "10 تدفقات" },
     footer: { desc: "صلوات موحدة.", resources: "موارد", copyright: "Pray4India International.", intercessors: "شفعاء", streamActive: "تدفق نشط", connect: "تواصل" }
-  },
+  }, */
   Chinese: {
     nav: {
       how: "运作方式",

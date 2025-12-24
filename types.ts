@@ -13,10 +13,7 @@ export type Language =
   | 'French'
   | 'German'
   | 'Portuguese'
-  | 'Spanish'
-  | 'Italian'
   | 'Japanese'
-  | 'Arabic'
   | 'Chinese'
   | 'Pidgin'
   | 'Urdu'
@@ -28,10 +25,7 @@ export const LANGUAGES: Language[] = [
   'French',
   'German',
   'Portuguese',
-  'Spanish',
-  'Italian',
   'Japanese',
-  'Arabic',
   'Chinese',
   'Pidgin',
   'Urdu',
