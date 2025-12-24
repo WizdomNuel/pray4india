@@ -199,6 +199,12 @@ const App: React.FC = () => {
     }
     setFormErrors({});
     setFormStatus('submitting');
+
+    // Construct mailto link
+    const subject = encodeURIComponent("New Join Request: Pray4India");
+    const body = encodeURIComponent(`New user joining!\n\nEmail: ${email}\nPhone: ${phone}\nLanguage: ${selectedLang}`);
+    window.location.href = `mailto:wisdomnuelmmesoma@gmail.com?subject=${subject}&body=${body}`;
+
     setTimeout(() => setFormStatus('success'), 1200);
   };
 
@@ -210,6 +216,12 @@ const App: React.FC = () => {
     }
     setContactErrors({});
     setContactStatus('submitting');
+
+    // Construct mailto link
+    const subject = encodeURIComponent("Contact Request: Pray4India");
+    const body = encodeURIComponent(`New contact message!\n\nName: ${contactName}\nEmail: ${contactEmail}\nMessage: ${contactMessage}`);
+    window.location.href = `mailto:wisdomnuelmmesoma@gmail.com?subject=${subject}&body=${body}`;
+
     setTimeout(() => {
       setContactStatus('success');
       setContactName('');
