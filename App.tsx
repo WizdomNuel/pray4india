@@ -438,12 +438,12 @@ const App: React.FC = () => {
 
       <section id="join" className="py-24 bg-white dark:bg-slate-950">
         <div className="max-w-5xl mx-auto px-6">
-          <div className="bg-white dark:bg-slate-900 rounded-[4rem] shadow-2xl overflow-hidden border border-slate-100 dark:border-slate-800">
-            <div className="p-12 md:p-20 text-center bg-slate-900 dark:bg-black text-white">
+          <div className="bg-white dark:bg-slate-900 rounded-[2.5rem] md:rounded-[4rem] shadow-2xl overflow-hidden border border-slate-100 dark:border-slate-800">
+            <div className="p-6 md:p-20 text-center bg-slate-900 dark:bg-black text-white">
               <h2 className="text-3xl lg:text-5xl font-bold mb-6 tracking-tighter uppercase">{t.join.title}</h2>
               <p className="text-lg lg:text-2xl text-slate-400 max-w-2xl mx-auto">{t.join.desc}</p>
             </div>
-            <div className="p-12 md:p-24">
+            <div className="p-5 md:p-24">
               <AnimatePresence mode="wait">
                 {formStatus === 'success' ? (
                   <motion.div initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} className="text-center py-10">
@@ -453,11 +453,11 @@ const App: React.FC = () => {
                     <button onClick={() => setFormStatus('idle')} className="text-orange-600 font-bold hover:underline text-sm uppercase">{t.join.successAction}</button>
                   </motion.div>
                 ) : (
-                  <form onSubmit={handleJoinSubmit} className="space-y-10">
-                    <div className="grid sm:grid-cols-2 gap-10">
+                  <form onSubmit={handleJoinSubmit} className="space-y-6 md:space-y-10">
+                    <div className="grid sm:grid-cols-2 gap-6 md:gap-10">
                       <div className="space-y-4">
                         <label className="text-sm font-bold text-slate-500 uppercase tracking-widest">{t.join.langLabel}</label>
-                        <select className="w-full px-8 py-5 rounded-2xl border-2 border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 dark:text-white focus:border-orange-600 outline-none font-bold uppercase" value={selectedLang} onChange={(e) => setSelectedLang(e.target.value as Language)} required>
+                        <select className="w-full px-5 py-4 md:px-8 md:py-5 rounded-2xl border-2 border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 dark:text-white focus:border-orange-600 outline-none font-bold uppercase" value={selectedLang} onChange={(e) => setSelectedLang(e.target.value as Language)} required>
                           {LANGUAGES.map(lang => (
                             <option key={lang} value={lang}>{lang}</option>
                           ))}
@@ -465,14 +465,14 @@ const App: React.FC = () => {
                       </div>
                       <div className="space-y-4">
                         <label className="text-sm font-bold text-slate-500 uppercase tracking-widest">{t.join.phoneLabel}</label>
-                        <input type="tel" placeholder="+91 00000 00000" className={`w-full px-8 py-5 rounded-2xl border-2 bg-slate-50 dark:bg-slate-950 dark:text-white focus:border-orange-600 outline-none font-bold ${formErrors.phone ? 'border-red-500' : 'border-slate-100 dark:border-slate-800'}`} value={phone} onChange={(e) => setPhone(e.target.value)} required />
+                        <input type="tel" placeholder="+91 00000 00000" className={`w-full px-5 py-4 md:px-8 md:py-5 rounded-2xl border-2 bg-slate-50 dark:bg-slate-950 dark:text-white focus:border-orange-600 outline-none font-bold ${formErrors.phone ? 'border-red-500' : 'border-slate-100 dark:border-slate-800'}`} value={phone} onChange={(e) => setPhone(e.target.value)} required />
                       </div>
                     </div>
                     <div className="space-y-4">
                       <label className="text-sm font-bold text-slate-500 uppercase tracking-widest">{t.join.emailLabel}</label>
-                      <input type="email" placeholder="you@example.com" className={`w-full px-8 py-5 rounded-2xl border-2 bg-slate-50 dark:bg-slate-950 dark:text-white focus:border-orange-600 outline-none font-bold ${formErrors.email ? 'border-red-500' : 'border-slate-100 dark:border-slate-800'}`} value={email} onChange={(e) => setEmail(e.target.value)} required />
+                      <input type="email" placeholder="you@example.com" className={`w-full px-5 py-4 md:px-8 md:py-5 rounded-2xl border-2 bg-slate-50 dark:bg-slate-950 dark:text-white focus:border-orange-600 outline-none font-bold ${formErrors.email ? 'border-red-500' : 'border-slate-100 dark:border-slate-800'}`} value={email} onChange={(e) => setEmail(e.target.value)} required />
                     </div>
-                    <button type="submit" disabled={formStatus === 'submitting'} className="w-full py-6 bg-orange-600 text-white font-bold rounded-2xl hover:bg-orange-700 transition-all shadow-xl flex items-center justify-center gap-4 text-lg lg:text-xl uppercase tracking-widest">
+                    <button type="submit" disabled={formStatus === 'submitting'} className="w-full py-4 md:py-6 bg-orange-600 text-white font-bold rounded-2xl hover:bg-orange-700 transition-all shadow-xl flex items-center justify-center gap-4 text-lg lg:text-xl uppercase tracking-widest">
                       {formStatus === 'submitting' ? <Loader2 className="w-8 h-8 animate-spin" /> : <Send className="w-8 h-8" />} {formStatus === 'submitting' ? t.join.submitting : t.join.submit}
                     </button>
                   </form>
