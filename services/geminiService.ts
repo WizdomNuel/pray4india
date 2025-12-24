@@ -78,6 +78,27 @@ const FALLBACK_PRAYERS: Record<string, PrayerPoint> = {
     scripture: '诗篇 67:6',
     prayerText: '主啊，我们为旁遮普邦的农民祷告。求你赐下丰沛的雨水，保佑庄稼丰收，让百姓衣食无忧。',
     language: 'Chinese'
+  },
+  'Pidgin': {
+    region: 'Maharashtra',
+    topic: 'Beta Health for Village',
+    scripture: 'Jeremiah 30:17',
+    prayerText: 'Baba God, we pray make you strengthen hospital dem for rural Maharashtra. Give wisdom to doctor dem and heal people wey no get money for medicine.',
+    language: 'Pidgin'
+  },
+  'Urdu': {
+    region: 'Hyderabad',
+    topic: 'امن اور سلامتی',
+    scripture: 'فلپیوں 4:7',
+    prayerText: 'اے خدا، ہم حیدرآباد میں امن اور سلامتی کے لیے دعا کرتے ہیں۔ لوگوں کے دلوں کو سکون عطا فرما اور بھائی چارے کو مضبوط کر۔',
+    language: 'Urdu'
+  },
+  'Korean': {
+    region: '벵갈루루 (Bengaluru)',
+    topic: '기술 분야의 지혜 (Tech Sector Wisdom)',
+    scripture: '야고보서 1:5',
+    prayerText: '주님, 인도의 기술 허브인 벵갈루루를 축복합니다. 리더들에게 지혜를 주시고, 그들의 혁신이 선한 영향력을 끼치게 하옵소서.',
+    language: 'Korean'
   }
 };
 
