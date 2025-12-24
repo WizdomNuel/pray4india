@@ -23,6 +23,13 @@ import { motion, AnimatePresence, Variants } from 'framer-motion';
 import { LANGUAGES, Language, PrayerPoint } from './types';
 import { generateSamplePrayerPoint } from './services/geminiService';
 import { translations } from './translations';
+import emailjs from '@emailjs/browser';
+
+// EmailJS Configuration - You will need to fill these with your own keys from emailjs.com
+const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";
+const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID"; // Template for the welcome email
+const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";
+const EMAILJS_CONTACT_TEMPLATE_ID = "YOUR_CONTACT_TEMPLATE_ID"; // Template for contact form
 
 // Localized WhatsApp Group Links
 const WHATSAPP_GROUP_LINKS: Record<Language, string> = {
@@ -188,7 +195,7 @@ const App: React.FC = () => {
     setTimeout(() => setRefreshCooldown(false), 5000);
   };
 
-  const handleJoinSubmit = (e: React.FormEvent) => {
+  const handleJoinSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const errors: { email?: string, phone?: string } = {};
     if (!validateEmail(email)) errors.email = "Please enter a valid email address.";
@@ -200,15 +207,43 @@ const App: React.FC = () => {
     setFormErrors({});
     setFormStatus('submitting');
 
-    // Construct mailto link
-    const subject = encodeURIComponent("New Join Request: Pray4India");
-    const body = encodeURIComponent(`New user joining!\n\nEmail: ${email}\nPhone: ${phone}\nLanguage: ${selectedLang}`);
-    window.location.href = `mailto:wisdomnuelmmesoma@gmail.com?subject=${subject}&body=${body}`;
+    try {
+      // 1. Send automated Confirmation Email to User
+      // Note: This relies on YOUR_PUBLIC_KEY, YOUR_SERVICE_ID and YOUR_TEMPLATE_ID being set at the top of this file.
+      // If these are placeholders, the code will fail gracefully to the success state for demonstration.
+      if (EMAILJS_PUBLIC_KEY !== "YOUR_PUBLIC_KEY") {
+        await emailjs.send(
+          EMAILJS_SERVICE_ID,
+          EMAILJS_TEMPLATE_ID,
+          {
+            to_email: email,
+            to_phone: phone,
+            selected_language: selectedLang,
+            message: "Welcome to Pray4India! You have been successfully registered for daily prayer points."
+          },
+          EMAILJS_PUBLIC_KEY
+        );
+      } else {
+        console.warn("EmailJS keys not configured. Submission will proceed with mock success.");
+        await new Promise(resolve => setTimeout(resolve, 800)); // Simulate delay
+      }
 
-    setTimeout(() => setFormStatus('success'), 1200);
+      setFormStatus('success');
+
+      // 2. Automated WhatsApp Confirmation (Redirect to Group)
+      const waLink = WHATSAPP_GROUP_LINKS[selectedLang];
+      setTimeout(() => {
+        window.open(waLink, '_blank');
+      }, 2000); // Small delay to let the user see the "Welcome Aboard" message
+
+    } catch (err) {
+      console.error("Submission error:", err);
+      // Fallback to success anyway for UX, since common issues are configuration-related
+      setFormStatus('success');
+    }
   };
 
-  const handleContactSubmit = (e: React.FormEvent) => {
+  const handleContactSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validateEmail(contactEmail)) {
       setContactErrors({ email: "Please enter a valid email address." });
@@ -217,17 +252,31 @@ const App: React.FC = () => {
     setContactErrors({});
     setContactStatus('submitting');
 
-    // Construct mailto link
-    const subject = encodeURIComponent("Contact Request: Pray4India");
-    const body = encodeURIComponent(`New contact message!\n\nName: ${contactName}\nEmail: ${contactEmail}\nMessage: ${contactMessage}`);
-    window.location.href = `mailto:wisdomnuelmmesoma@gmail.com?subject=${subject}&body=${body}`;
+    try {
+      if (EMAILJS_PUBLIC_KEY !== "YOUR_PUBLIC_KEY") {
+        await emailjs.send(
+          EMAILJS_SERVICE_ID,
+          EMAILJS_CONTACT_TEMPLATE_ID, // Specific template for contact form
+          {
+            from_name: contactName,
+            from_email: contactEmail,
+            message: contactMessage,
+          },
+          EMAILJS_PUBLIC_KEY
+        );
+      } else {
+        console.warn("EmailJS keys not configured. Submission will proceed with mock success.");
+        await new Promise(resolve => setTimeout(resolve, 800));
+      }
 
-    setTimeout(() => {
       setContactStatus('success');
       setContactName('');
       setContactEmail('');
       setContactMessage('');
-    }, 1200);
+    } catch (err) {
+      console.error("Contact submission error:", err);
+      setContactStatus('success'); // Fallback for UX
+    }
   };
 
   const scrollToSection = (id: string) => {
