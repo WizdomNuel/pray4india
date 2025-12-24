@@ -472,7 +472,7 @@ const App: React.FC = () => {
                       <label className="text-sm font-bold text-slate-500 uppercase tracking-widest">{t.join.emailLabel}</label>
                       <input type="email" placeholder="you@example.com" className={`w-full px-5 py-4 md:px-8 md:py-5 rounded-2xl border-2 bg-slate-50 dark:bg-slate-950 dark:text-white focus:border-orange-600 outline-none font-bold ${formErrors.email ? 'border-red-500' : 'border-slate-100 dark:border-slate-800'}`} value={email} onChange={(e) => setEmail(e.target.value)} required />
                     </div>
-                    <button type="submit" disabled={formStatus === 'submitting'} className="w-full py-4 md:py-6 bg-orange-600 text-white font-bold rounded-2xl hover:bg-orange-700 transition-all shadow-xl flex items-center justify-center gap-1 md:gap-2 text-lg lg:text-xl uppercase tracking-widest">
+                    <button type="submit" disabled={formStatus === 'submitting'} className="w-full py-4 md:py-6 bg-orange-600 text-white font-bold rounded-2xl hover:bg-orange-700 transition-all shadow-xl flex items-center justify-center gap-0.5 md:gap-2 text-lg lg:text-xl uppercase tracking-widest">
                       {formStatus === 'submitting' ? <Loader2 className="w-6 h-6 animate-spin" /> : <Send className="w-5 h-5 md:w-6 md:h-6" />} {formStatus === 'submitting' ? t.join.submitting : t.join.submit}
                     </button>
                   </form>
@@ -508,8 +508,8 @@ const App: React.FC = () => {
                   <input type="email" className={`w-full px-5 py-4 md:px-8 md:py-5 rounded-2xl border-2 bg-white dark:bg-slate-950 dark:text-white focus:border-orange-600 outline-none font-bold ${contactErrors.email ? 'border-red-500' : 'border-white dark:border-slate-800'}`} value={contactEmail} onChange={(e) => setContactEmail(e.target.value)} required />
                 </div>
                 <textarea rows={5} placeholder={t.contact.message} className="w-full px-5 py-4 md:px-8 md:py-5 rounded-2xl border-2 border-white dark:border-slate-800 bg-white dark:bg-slate-950 dark:text-white focus:border-orange-600 outline-none font-bold resize-none" value={contactMessage} onChange={(e) => setContactMessage(e.target.value)} required></textarea>
-                <button type="submit" disabled={contactStatus === 'submitting'} className="w-full py-4 md:py-6 bg-slate-900 dark:bg-white text-white dark:text-slate-950 font-bold rounded-2xl hover:bg-slate-800 dark:hover:bg-slate-100 transition-all flex items-center justify-center gap-4 uppercase tracking-widest text-lg lg:text-xl">
-                  {contactStatus === 'submitting' ? <Loader2 className="w-8 h-8 animate-spin" /> : <Send className="w-8 h-8" />} {t.contact.submit}
+                <button type="submit" disabled={contactStatus === 'submitting'} className="w-full py-4 md:py-6 bg-slate-900 dark:bg-white text-white dark:text-slate-950 font-bold rounded-2xl hover:bg-slate-800 dark:hover:bg-slate-100 transition-all flex items-center justify-center gap-2 text-lg lg:text-xl uppercase tracking-widest">
+                  {contactStatus === 'submitting' ? <Loader2 className="w-6 h-6 animate-spin" /> : <Send className="w-5 h-5 md:w-6 md:h-6" />} {t.contact.submit}
                 </button>
               </form>
             </div>
