@@ -244,7 +244,7 @@ const App: React.FC = () => {
         transition={{ type: "spring", stiffness: 120, damping: 20 }}
         className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-slate-100 dark:border-slate-800"
       >
-        <div className="max-w-7xl mx-auto px-6 flex justify-between items-center h-20">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 flex justify-between items-center h-20">
           <motion.div
             whileHover={{ scale: 1.02 }}
             className="flex items-center gap-3 cursor-pointer group"
@@ -281,7 +281,7 @@ const App: React.FC = () => {
             </motion.button>
           </nav>
 
-          <div className="flex lg:hidden items-center gap-3">
+          <div className="flex lg:hidden items-center gap-2">
             <button onClick={() => setShowMobileLang(!showMobileLang)} className="p-3 bg-slate-100 dark:bg-slate-900 rounded-xl text-orange-600 border border-slate-200 dark:border-slate-800">
               <Globe className="w-5 h-5" />
             </button>
@@ -322,11 +322,11 @@ const App: React.FC = () => {
               <span className="text-orange-600 dark:text-orange-500 italic block mt-2">{t.hero.titleItalic}</span>
             </h1>
             <p className="text-lg lg:text-2xl text-slate-600 dark:text-slate-400 mb-12 max-w-xl leading-relaxed font-medium mx-auto lg:mx-0">{t.hero.desc}</p>
-            <div className="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start">
-              <button onClick={() => scrollToSection('join')} className="px-10 py-5 bg-orange-600 text-white font-bold rounded-2xl shadow-xl flex items-center justify-center gap-3 uppercase tracking-widest">
+            <div className="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start w-full sm:w-auto">
+              <button onClick={() => scrollToSection('join')} className="w-full sm:w-auto px-10 py-5 bg-orange-600 text-white font-bold rounded-2xl shadow-xl flex items-center justify-center gap-3 uppercase tracking-widest">
                 {t.hero.ctaPrimary} <ChevronRight className="w-6 h-6" />
               </button>
-              <button onClick={() => scrollToSection('how-it-works')} className="px-10 py-5 bg-white dark:bg-slate-950 text-slate-900 dark:text-white font-bold rounded-2xl border border-slate-200 dark:border-slate-800 uppercase tracking-widest">
+              <button onClick={() => scrollToSection('how-it-works')} className="w-full sm:w-auto px-10 py-5 bg-white dark:bg-slate-950 text-slate-900 dark:text-white font-bold rounded-2xl border border-slate-200 dark:border-slate-800 uppercase tracking-widest">
                 {t.hero.ctaSecondary}
               </button>
             </div>
@@ -398,7 +398,7 @@ const App: React.FC = () => {
                     </div>
                     <div className="p-10 bg-white/5 rounded-[2.5rem] border-l-[10px] border-orange-600 italic text-slate-200 text-2xl font-medium shadow-inner">"{samplePrayer?.scripture}"</div>
                     <p className="text-xl lg:text-3xl text-slate-300 leading-relaxed font-light">{samplePrayer?.prayerText}</p>
-                    <a href={WHATSAPP_GROUP_LINKS[selectedLang]} target="_blank" className="mt-auto inline-flex px-10 py-5 bg-green-600 text-white font-bold rounded-2xl shadow-xl items-center gap-4 text-base uppercase tracking-widest">
+                    <a href={WHATSAPP_GROUP_LINKS[selectedLang]} target="_blank" className="mt-auto inline-flex w-full sm:w-auto px-10 py-5 bg-green-600 text-white font-bold rounded-2xl shadow-xl items-center justify-center gap-4 text-base uppercase tracking-widest">
                       <MessageCircle className="w-6 h-6" /> {t.preview.joinGroup.replace('{lang}', selectedLang)}
                     </a>
                   </motion.div>
@@ -497,7 +497,7 @@ const App: React.FC = () => {
                 </div>
               </div>
             </div>
-            <div className="bg-slate-50 dark:bg-slate-900 p-12 lg:p-20 rounded-[4rem] border-2 border-white dark:border-slate-800 shadow-2xl">
+            <div className="bg-slate-50 dark:bg-slate-900 p-6 md:p-12 lg:p-20 rounded-[4rem] border-2 border-white dark:border-slate-800 shadow-2xl">
               <form onSubmit={handleContactSubmit} className="space-y-10">
                 <div className="space-y-4">
                   <label className="text-sm font-bold text-slate-500 uppercase tracking-widest">{t.contact.name}</label>
@@ -517,9 +517,9 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      <footer className="bg-slate-900 dark:bg-black text-slate-500 py-24 border-t border-slate-800">
+      <footer className="bg-slate-900 dark:bg-black text-slate-500 py-12 md:py-24 border-t border-slate-800">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-16 mb-24">
             <div className="col-span-1 lg:col-span-2">
               <div className="flex items-center gap-5 mb-12 cursor-pointer group" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
                 <div className="w-14 h-14 bg-orange-600 rounded-2xl flex items-center justify-center text-white font-black text-4xl shadow-2xl group-hover:rotate-12 group-hover:scale-110 transition-all">P</div>
