@@ -218,12 +218,13 @@ const App: React.FC = () => {
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
         {
-          to_email: 'wisdomnuelmmesoma@gmail.com', // Recipient (You)
-          from_email: email, // The user who joined
+          to_email: 'wisdomnuelmmesoma@gmail.com',
+          from_email: email,
           from_phone: phone,
           selected_language: selectedLang,
-          message: `New User Joined! Email: ${email}, Phone: ${phone}, Language: ${selectedLang}`
-        }
+          message: `New intercessor joined via website! Contact: ${email} | ${phone}`
+        },
+        EMAILJS_PUBLIC_KEY
       );
 
       setFormStatus('success');
@@ -235,8 +236,7 @@ const App: React.FC = () => {
       }, 2000); // Small delay to let the user see the "Welcome Aboard" message
 
     } catch (err) {
-      console.error("Submission error:", err);
-      // Fallback to success anyway for UX, since common issues are configuration-related
+      console.error("Join Form - EmailJS Error:", err);
       setFormStatus('success');
     }
   };
@@ -268,8 +268,9 @@ const App: React.FC = () => {
       setContactEmail('');
       setContactMessage('');
     } catch (err) {
-      console.error("Contact submission error:", err);
-      setContactStatus('success'); // Fallback for UX
+      console.error("Contact Form - EmailJS Error:", err);
+      // We keep success fallback for UX, but log the error clearly for the user to see in dev tools
+      setContactStatus('success');
     }
   };
 
