@@ -261,6 +261,7 @@ const App: React.FC = () => {
             from_name: contactName,
             from_email: contactEmail,
             message: contactMessage,
+            to_email: 'wisdomnuelmmesoma@gmail.com'
           },
           EMAILJS_PUBLIC_KEY
         );
@@ -553,7 +554,7 @@ const App: React.FC = () => {
                 <Mail className="w-8 h-8 md:w-10 md:h-10 text-orange-600 flex-shrink-0" />
                 <div className="min-w-0">
                   <div className="text-xs font-bold text-slate-400 uppercase tracking-widest">{t.contact.support}</div>
-                  <a href="mailto:support@pray4india.org" className="text-base sm:text-xl lg:text-3xl font-bold uppercase truncate sm:whitespace-normal">support@pray4india.org</a>
+                  <a href="mailto:wisdomnuelmmesoma@gmail.com" className="text-base sm:text-xl lg:text-3xl font-bold uppercase truncate sm:whitespace-normal">wisdomnuelmmesoma@gmail.com</a>
                 </div>
               </div>
             </div>
