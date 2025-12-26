@@ -499,7 +499,7 @@ const App: React.FC = () => {
                   {benefit.icon}
                 </div>
                 <h3 className="text-xl font-bold mb-4 uppercase">{benefit.title}</h3>
-                <p className="text-base lg:text-base text-slate-500 dark:text-slate-400 leading-relaxed flex-1">{benefit.desc}</p>
+                <p className="text-base lg:text-sm text-slate-500 dark:text-slate-400 leading-relaxed flex-1">{benefit.desc}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -511,7 +511,7 @@ const App: React.FC = () => {
           <div className="bg-white dark:bg-slate-900 rounded-[2.5rem] md:rounded-[4rem] shadow-2xl overflow-hidden border border-slate-100 dark:border-slate-800">
             <div className="p-6 md:p-20 text-center bg-slate-900 dark:bg-black text-white">
               <h2 className="text-3xl lg:text-4xl font-bold mb-6 tracking-tighter uppercase">{t.join.title}</h2>
-              <p className="text-lg lg:text-sm text-slate-400 max-w-2xl mx-auto">{t.join.desc}</p>
+              <p className="text-lg lg:text-xs text-slate-400 max-w-2xl mx-auto">{t.join.desc}</p>
             </div>
             <div className="p-5 md:p-24">
               <AnimatePresence mode="wait">
@@ -558,12 +558,12 @@ const App: React.FC = () => {
           <div className="grid lg:grid-cols-2 gap-6 lg:gap-24 items-start">
             <div className="space-y-6 md:space-y-12">
               <h2 className="text-2xl lg:text-3xl font-bold text-slate-900 dark:text-white leading-tight uppercase tracking-tighter">{t.contact.title}</h2>
-              <p className="text-base lg:text-sm text-slate-500 dark:text-slate-400 font-medium">{t.contact.desc}</p>
+              <p className="text-base lg:text-xs text-slate-500 dark:text-slate-400 font-medium">{t.contact.desc}</p>
               <div className="pt-6 md:pt-14 border-t border-slate-100 dark:border-slate-800 flex items-center gap-4 md:gap-10">
                 <Mail className="w-5 h-5 md:w-6 md:h-6 text-orange-600 flex-shrink-0" />
                 <div className="min-w-0">
                   <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest leading-none mb-1">{t.contact.support}</div>
-                  <a href="mailto:wisdomnuelmmesoma@gmail.com" className="text-xs md:text-[10px] lg:text-[11px] font-bold uppercase truncate sm:whitespace-normal block">wisdomnuelmmesoma@gmail.com</a>
+                  <a href="mailto:wisdomnuelmmesoma@gmail.com" className="text-xs md:text-[10px] lg:text-[10px] font-bold uppercase truncate sm:whitespace-normal block">wisdomnuelmmesoma@gmail.com</a>
                 </div>
               </div>
             </div>
@@ -595,7 +595,7 @@ const App: React.FC = () => {
                 <div className="w-14 h-14 bg-orange-600 rounded-2xl flex items-center justify-center text-white font-black text-4xl shadow-2xl group-hover:rotate-12 group-hover:scale-110 transition-all">P</div>
                 <span className="text-3xl lg:text-5xl font-bold text-white tracking-tighter uppercase">Pray4India</span>
               </div>
-              <p className="text-xl lg:text-lg text-slate-400 max-w-sm leading-relaxed font-light italic opacity-80">{t.footer.desc}</p>
+              <p className="text-xl lg:text-sm text-slate-400 max-w-sm leading-relaxed font-light italic opacity-80">{t.footer.desc}</p>
             </div>
             <div>
               <h4 className="text-white font-bold text-sm uppercase tracking-widest mb-12">{t.nav.how}</h4>
