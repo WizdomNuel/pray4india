@@ -214,20 +214,24 @@ const App: React.FC = () => {
     try {
       const templateParams = {
         to_email: TARGET_EMAIL,
+        to_name: "Pray4India Admin",
         from_email: email,
         from_phone: phone,
+        reply_to: email,
         selected_language: selectedLang,
         message: `New intercessor joined! | Email: ${email} | Phone: ${phone}`
       };
 
-      console.log("Sending Join Form Data:", templateParams);
+      console.log("Attempting to send Join Form:", templateParams);
 
-      await emailjs.send(
+      const response = await emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
         templateParams,
         EMAILJS_PUBLIC_KEY
       );
+
+      console.log("EmailJS Success (Join):", response.status, response.text);
 
       setFormStatus('success');
 
@@ -239,9 +243,8 @@ const App: React.FC = () => {
 
     } catch (err: any) {
       console.error("Join Form - EmailJS Error:", err);
-      // Detailed alert to help user debug their configuration
-      alert(`Email Error: ${err?.text || err?.message || 'Unknown error'}. Please check your Public Key and Template settings.`);
-      setFormStatus('success');
+      alert(`CRITICAL ERROR: Email failed to send. \nReason: ${err?.text || err?.message || 'Unknown'}\n\nCheck if your Public Key "${EMAILJS_PUBLIC_KEY}" is correct in line 31 of App.tsx.`);
+      setFormStatus('idle'); // Don't show success if it failed
     }
   };
 
@@ -256,20 +259,24 @@ const App: React.FC = () => {
 
     try {
       const templateParams = {
+        to_email: TARGET_EMAIL,
+        to_name: "Pray4India Admin",
         from_name: contactName,
         from_email: contactEmail,
-        message: contactMessage,
-        to_email: TARGET_EMAIL
+        reply_to: contactEmail,
+        message: contactMessage
       };
 
-      console.log("Sending Contact Form Data:", templateParams);
+      console.log("Attempting to send Contact Form:", templateParams);
 
-      await emailjs.send(
+      const response = await emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_CONTACT_TEMPLATE_ID,
         templateParams,
         EMAILJS_PUBLIC_KEY
       );
+
+      console.log("EmailJS Success:", response.status, response.text);
 
       setContactStatus('success');
       setContactName('');
@@ -277,9 +284,8 @@ const App: React.FC = () => {
       setContactMessage('');
     } catch (err: any) {
       console.error("Contact Form - EmailJS Error:", err);
-      // Detailed alert to help user debug their configuration
-      alert(`Contact Email Error: ${err?.text || err?.message || 'Unknown error'}. Please verify your Public Key: ${EMAILJS_PUBLIC_KEY}`);
-      setContactStatus('success');
+      alert(`CRITICAL ERROR: Message failed to send.\nReason: ${err?.text || err?.message || 'Unknown'}\n\nVerify Public Key "${EMAILJS_PUBLIC_KEY}" at line 31.`);
+      setContactStatus('idle');
     }
   };
 
