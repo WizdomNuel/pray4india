@@ -510,8 +510,8 @@ const App: React.FC = () => {
         <div className="max-w-5xl mx-auto px-6">
           <div className="bg-white dark:bg-slate-900 rounded-[2.5rem] md:rounded-[4rem] shadow-2xl overflow-hidden border border-slate-100 dark:border-slate-800">
             <div className="p-6 md:p-20 text-center bg-slate-900 dark:bg-black text-white">
-              <h2 className="text-3xl lg:text-5xl font-bold mb-6 tracking-tighter uppercase">{t.join.title}</h2>
-              <p className="text-lg lg:text-base text-slate-400 max-w-2xl mx-auto">{t.join.desc}</p>
+              <h2 className="text-3xl lg:text-4xl font-bold mb-6 tracking-tighter uppercase">{t.join.title}</h2>
+              <p className="text-lg lg:text-sm text-slate-400 max-w-2xl mx-auto">{t.join.desc}</p>
             </div>
             <div className="p-5 md:p-24">
               <AnimatePresence mode="wait">
@@ -557,13 +557,13 @@ const App: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-6 lg:gap-24 items-start">
             <div className="space-y-6 md:space-y-12">
-              <h2 className="text-2xl lg:text-4xl font-bold text-slate-900 dark:text-white leading-tight uppercase tracking-tighter">{t.contact.title}</h2>
-              <p className="text-base lg:text-base text-slate-500 dark:text-slate-400 font-medium">{t.contact.desc}</p>
+              <h2 className="text-2xl lg:text-3xl font-bold text-slate-900 dark:text-white leading-tight uppercase tracking-tighter">{t.contact.title}</h2>
+              <p className="text-base lg:text-sm text-slate-500 dark:text-slate-400 font-medium">{t.contact.desc}</p>
               <div className="pt-6 md:pt-14 border-t border-slate-100 dark:border-slate-800 flex items-center gap-4 md:gap-10">
                 <Mail className="w-5 h-5 md:w-10 md:h-10 text-orange-600 flex-shrink-0" />
                 <div className="min-w-0">
                   <div className="text-[10px] md:text-xs font-bold text-slate-400 uppercase tracking-widest">{t.contact.support}</div>
-                  <a href="mailto:wisdomnuelmmesoma@gmail.com" className="text-xs sm:text-lg md:text-xl lg:text-base font-bold uppercase truncate sm:whitespace-normal">wisdomnuelmmesoma@gmail.com</a>
+                  <a href="mailto:wisdomnuelmmesoma@gmail.com" className="text-xs sm:text-lg md:text-xl lg:text-sm font-bold uppercase truncate sm:whitespace-normal">wisdomnuelmmesoma@gmail.com</a>
                 </div>
               </div>
             </div>
