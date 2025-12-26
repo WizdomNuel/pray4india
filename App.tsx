@@ -235,8 +235,10 @@ const App: React.FC = () => {
         window.open(waLink, '_blank');
       }, 2000); // Small delay to let the user see the "Welcome Aboard" message
 
-    } catch (err) {
+    } catch (err: any) {
       console.error("Join Form - EmailJS Error:", err);
+      // Detailed alert to help user debug their configuration
+      alert(`Email Error: ${err?.text || err?.message || 'Unknown error'}. Please check your Public Key and Template settings.`);
       setFormStatus('success');
     }
   };
@@ -267,9 +269,10 @@ const App: React.FC = () => {
       setContactName('');
       setContactEmail('');
       setContactMessage('');
-    } catch (err) {
+    } catch (err: any) {
       console.error("Contact Form - EmailJS Error:", err);
-      // We keep success fallback for UX, but log the error clearly for the user to see in dev tools
+      // Detailed alert to help user debug their configuration
+      alert(`Contact Email Error: ${err?.text || err?.message || 'Unknown error'}. Please verify your Public Key: ${EMAILJS_PUBLIC_KEY}`);
       setContactStatus('success');
     }
   };
