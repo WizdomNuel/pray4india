@@ -208,25 +208,19 @@ const App: React.FC = () => {
     setFormStatus('submitting');
 
     try {
-      // 1. Send automated Confirmation Email to User
-      // Note: This relies on YOUR_PUBLIC_KEY, YOUR_SERVICE_ID and YOUR_TEMPLATE_ID being set at the top of this file.
-      // If these are placeholders, the code will fail gracefully to the success state for demonstration.
-      if (EMAILJS_PUBLIC_KEY !== "Jwwadl8l3hZ7X-1zX") {
-        await emailjs.send(
-          EMAILJS_SERVICE_ID,
-          EMAILJS_TEMPLATE_ID,
-          {
-            to_email: email,
-            to_phone: phone,
-            selected_language: selectedLang,
-            message: "Welcome to Pray4India! You have been successfully registered for daily prayer points."
-          },
-          EMAILJS_PUBLIC_KEY
-        );
-      } else {
-        console.warn("EmailJS keys not configured. Submission will proceed with mock success.");
-        await new Promise(resolve => setTimeout(resolve, 800)); // Simulate delay
-      }
+      // Send automated Confirmation Email to User
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          to_email: email,
+          to_phone: phone,
+          selected_language: selectedLang,
+          message: "Welcome to Pray4India! You have been successfully registered for daily prayer points.",
+          admin_email: 'wisdomnuelmmesoma@gmail.com' // Send notice to admin
+        },
+        EMAILJS_PUBLIC_KEY
+      );
 
       setFormStatus('success');
 
@@ -253,22 +247,17 @@ const App: React.FC = () => {
     setContactStatus('submitting');
 
     try {
-      if (EMAILJS_PUBLIC_KEY !== "Jwwadl8l3hZ7X-1zX") {
-        await emailjs.send(
-          EMAILJS_SERVICE_ID,
-          EMAILJS_CONTACT_TEMPLATE_ID, // Specific template for contact form
-          {
-            from_name: contactName,
-            from_email: contactEmail,
-            message: contactMessage,
-            to_email: 'wisdomnuelmmesoma@gmail.com'
-          },
-          EMAILJS_PUBLIC_KEY
-        );
-      } else {
-        console.warn("EmailJS keys not configured. Submission will proceed with mock success.");
-        await new Promise(resolve => setTimeout(resolve, 800));
-      }
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_CONTACT_TEMPLATE_ID, // Specific template for contact form
+        {
+          from_name: contactName,
+          from_email: contactEmail,
+          message: contactMessage,
+          to_email: 'wisdomnuelmmesoma@gmail.com'
+        },
+        EMAILJS_PUBLIC_KEY
+      );
 
       setContactStatus('success');
       setContactName('');
