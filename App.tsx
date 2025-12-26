@@ -26,10 +26,10 @@ import { translations } from './translations';
 import emailjs from '@emailjs/browser';
 
 // EmailJS Configuration - You will need to fill these with your own keys from emailjs.com
-const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";
-const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID"; // Template for the welcome email
-const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";
-const EMAILJS_CONTACT_TEMPLATE_ID = "YOUR_CONTACT_TEMPLATE_ID"; // Template for contact form
+const EMAILJS_SERVICE_ID = "service_fc6q465";
+const EMAILJS_TEMPLATE_ID = "template_p8qjmmc"; // Template for the welcome email
+const EMAILJS_PUBLIC_KEY = "Jwwadl8l3hZ7X-1zX";
+const EMAILJS_CONTACT_TEMPLATE_ID = "template_p8qjmmc"; // Template for contact form
 
 // Localized WhatsApp Group Links
 const WHATSAPP_GROUP_LINKS: Record<Language, string> = {
@@ -211,7 +211,7 @@ const App: React.FC = () => {
       // 1. Send automated Confirmation Email to User
       // Note: This relies on YOUR_PUBLIC_KEY, YOUR_SERVICE_ID and YOUR_TEMPLATE_ID being set at the top of this file.
       // If these are placeholders, the code will fail gracefully to the success state for demonstration.
-      if (EMAILJS_PUBLIC_KEY !== "YOUR_PUBLIC_KEY") {
+      if (EMAILJS_PUBLIC_KEY !== "Jwwadl8l3hZ7X-1zX") {
         await emailjs.send(
           EMAILJS_SERVICE_ID,
           EMAILJS_TEMPLATE_ID,
@@ -253,7 +253,7 @@ const App: React.FC = () => {
     setContactStatus('submitting');
 
     try {
-      if (EMAILJS_PUBLIC_KEY !== "YOUR_PUBLIC_KEY") {
+      if (EMAILJS_PUBLIC_KEY !== "Jwwadl8l3hZ7X-1zX") {
         await emailjs.send(
           EMAILJS_SERVICE_ID,
           EMAILJS_CONTACT_TEMPLATE_ID, // Specific template for contact form
