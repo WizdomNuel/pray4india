@@ -499,7 +499,7 @@ const App: React.FC = () => {
                   {benefit.icon}
                 </div>
                 <h3 className="text-xl font-bold mb-4 uppercase">{benefit.title}</h3>
-                <p className="text-base lg:text-lg text-slate-500 dark:text-slate-400 leading-relaxed flex-1">{benefit.desc}</p>
+                <p className="text-base lg:text-base text-slate-500 dark:text-slate-400 leading-relaxed flex-1">{benefit.desc}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -560,7 +560,7 @@ const App: React.FC = () => {
               <h2 className="text-2xl lg:text-3xl font-bold text-slate-900 dark:text-white leading-tight uppercase tracking-tighter">{t.contact.title}</h2>
               <p className="text-base lg:text-sm text-slate-500 dark:text-slate-400 font-medium">{t.contact.desc}</p>
               <div className="pt-6 md:pt-14 border-t border-slate-100 dark:border-slate-800 flex items-center gap-4 md:gap-10">
-                <Mail className="w-5 h-5 md:w-10 md:h-10 text-orange-600 flex-shrink-0" />
+                <Mail className="w-5 h-5 md:w-6 md:h-6 text-orange-600 flex-shrink-0" />
                 <div className="min-w-0">
                   <div className="text-[10px] md:text-xs font-bold text-slate-400 uppercase tracking-widest">{t.contact.support}</div>
                   <a href="mailto:wisdomnuelmmesoma@gmail.com" className="text-xs sm:text-lg md:text-xl lg:text-sm font-bold uppercase truncate sm:whitespace-normal">wisdomnuelmmesoma@gmail.com</a>
@@ -595,7 +595,7 @@ const App: React.FC = () => {
                 <div className="w-14 h-14 bg-orange-600 rounded-2xl flex items-center justify-center text-white font-black text-4xl shadow-2xl group-hover:rotate-12 group-hover:scale-110 transition-all">P</div>
                 <span className="text-3xl lg:text-5xl font-bold text-white tracking-tighter uppercase">Pray4India</span>
               </div>
-              <p className="text-xl lg:text-2xl text-slate-400 max-w-sm leading-relaxed font-light italic opacity-80">{t.footer.desc}</p>
+              <p className="text-xl lg:text-lg text-slate-400 max-w-sm leading-relaxed font-light italic opacity-80">{t.footer.desc}</p>
             </div>
             <div>
               <h4 className="text-white font-bold text-sm uppercase tracking-widest mb-12">{t.nav.how}</h4>
