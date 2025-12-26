@@ -544,21 +544,21 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      <section id="contact" className="py-24 bg-white dark:bg-slate-950">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-start">
-            <div className="space-y-12">
-              <h2 className="text-4xl lg:text-6xl font-bold text-slate-900 dark:text-white leading-tight uppercase tracking-tighter">{t.contact.title}</h2>
-              <p className="text-xl lg:text-3xl text-slate-500 dark:text-slate-400 font-medium">{t.contact.desc}</p>
-              <div className="pt-14 border-t border-slate-100 dark:border-slate-800 flex items-center gap-6 md:gap-10">
-                <Mail className="w-8 h-8 md:w-10 md:h-10 text-orange-600 flex-shrink-0" />
+      <section id="contact" className="py-12 md:py-24 bg-white dark:bg-slate-950">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-24 items-start">
+            <div className="space-y-8 md:space-y-12">
+              <h2 className="text-3xl lg:text-6xl font-bold text-slate-900 dark:text-white leading-tight uppercase tracking-tighter">{t.contact.title}</h2>
+              <p className="text-lg lg:text-3xl text-slate-500 dark:text-slate-400 font-medium">{t.contact.desc}</p>
+              <div className="pt-8 md:pt-14 border-t border-slate-100 dark:border-slate-800 flex items-center gap-4 md:gap-10">
+                <Mail className="w-6 h-6 md:w-10 md:h-10 text-orange-600 flex-shrink-0" />
                 <div className="min-w-0">
-                  <div className="text-xs font-bold text-slate-400 uppercase tracking-widest">{t.contact.support}</div>
-                  <a href="mailto:wisdomnuelmmesoma@gmail.com" className="text-base sm:text-xl lg:text-3xl font-bold uppercase truncate sm:whitespace-normal">wisdomnuelmmesoma@gmail.com</a>
+                  <div className="text-[10px] md:text-xs font-bold text-slate-400 uppercase tracking-widest">{t.contact.support}</div>
+                  <a href="mailto:wisdomnuelmmesoma@gmail.com" className="text-sm sm:text-lg md:text-xl lg:text-3xl font-bold uppercase truncate sm:whitespace-normal">wisdomnuelmmesoma@gmail.com</a>
                 </div>
               </div>
             </div>
-            <div className="bg-slate-50 dark:bg-slate-900 p-4 md:p-12 lg:p-20 rounded-2xl md:rounded-[4rem] border-2 border-white dark:border-slate-800 shadow-2xl">
+            <div className="bg-slate-50 dark:bg-slate-900 p-4 sm:p-6 md:p-12 lg:p-20 rounded-xl md:rounded-[4rem] border-2 border-white dark:border-slate-800 shadow-2xl">
               <form onSubmit={handleContactSubmit} className="space-y-4 md:space-y-10">
                 <div className="space-y-2">
                   <label className="text-xs font-bold text-slate-500 uppercase tracking-widest">{t.contact.name}</label>
