@@ -558,7 +558,7 @@ const App: React.FC = () => {
                 </div>
               </div>
             </div>
-            <div className="bg-slate-50 dark:bg-slate-900 p-6 md:p-12 lg:p-20 rounded-3xl md:rounded-[4rem] border-2 border-white dark:border-slate-800 shadow-2xl">
+            <div className="bg-slate-50 dark:bg-slate-900 p-4 md:p-12 lg:p-20 rounded-2xl md:rounded-[4rem] border-2 border-white dark:border-slate-800 shadow-2xl">
               <form onSubmit={handleContactSubmit} className="space-y-4 md:space-y-10">
                 <div className="space-y-2">
                   <label className="text-xs font-bold text-slate-500 uppercase tracking-widest">{t.contact.name}</label>
