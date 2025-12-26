@@ -30,6 +30,7 @@ const EMAILJS_SERVICE_ID = "service_fc6q465";
 const EMAILJS_TEMPLATE_ID = "template_p8qjmmc"; // Template for the join/welcome email
 const EMAILJS_PUBLIC_KEY = "Jwwadl8l3hZ7X-1zX"; // ← REPLACE THIS WITH YOUR PUBLIC KEY
 const EMAILJS_CONTACT_TEMPLATE_ID = "template_p8qjmmc"; // Template for contact form
+const TARGET_EMAIL = "wisdomnuelmmesoma@gmail.com";
 
 // Initialize EmailJS
 emailjs.init(EMAILJS_PUBLIC_KEY);
@@ -211,19 +212,20 @@ const App: React.FC = () => {
     setFormStatus('submitting');
 
     try {
-      // Send data to EmailJS
-      // This will send to the address configured in your EmailJS template.
-      // We pass 'wisdomnuelmmesoma@gmail.com' as to_email for use in the template.
+      const templateParams = {
+        to_email: TARGET_EMAIL,
+        from_email: email,
+        from_phone: phone,
+        selected_language: selectedLang,
+        message: `New intercessor joined! | Email: ${email} | Phone: ${phone}`
+      };
+
+      console.log("Sending Join Form Data:", templateParams);
+
       await emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
-        {
-          to_email: 'wisdomnuelmmesoma@gmail.com',
-          from_email: email,
-          from_phone: phone,
-          selected_language: selectedLang,
-          message: `New intercessor joined via website! Contact: ${email} | ${phone}`
-        },
+        templateParams,
         EMAILJS_PUBLIC_KEY
       );
 
@@ -253,15 +255,19 @@ const App: React.FC = () => {
     setContactStatus('submitting');
 
     try {
+      const templateParams = {
+        from_name: contactName,
+        from_email: contactEmail,
+        message: contactMessage,
+        to_email: TARGET_EMAIL
+      };
+
+      console.log("Sending Contact Form Data:", templateParams);
+
       await emailjs.send(
         EMAILJS_SERVICE_ID,
-        EMAILJS_CONTACT_TEMPLATE_ID, // Specific template for contact form
-        {
-          from_name: contactName,
-          from_email: contactEmail,
-          message: contactMessage,
-          to_email: 'wisdomnuelmmesoma@gmail.com'
-        },
+        EMAILJS_CONTACT_TEMPLATE_ID,
+        templateParams,
         EMAILJS_PUBLIC_KEY
       );
 
