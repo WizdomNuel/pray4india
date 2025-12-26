@@ -25,11 +25,14 @@ import { generateSamplePrayerPoint } from './services/geminiService';
 import { translations } from './translations';
 import emailjs from '@emailjs/browser';
 
-// EmailJS Configuration - You will need to fill these with your own keys from emailjs.com
+// EmailJS Configuration - IMPORTANT: Replace EMAILJS_PUBLIC_KEY with your actual public key from EmailJS
 const EMAILJS_SERVICE_ID = "service_fc6q465";
-const EMAILJS_TEMPLATE_ID = "template_p8qjmmc"; // Template for the welcome email
-const EMAILJS_PUBLIC_KEY = "Jwwadl8l3hZ7X-1zX";
+const EMAILJS_TEMPLATE_ID = "template_p8qjmmc"; // Template for the join/welcome email
+const EMAILJS_PUBLIC_KEY = "Jwwadl8l3hZ7X-1zX"; // ← REPLACE THIS WITH YOUR PUBLIC KEY
 const EMAILJS_CONTACT_TEMPLATE_ID = "template_p8qjmmc"; // Template for contact form
+
+// Initialize EmailJS
+emailjs.init(EMAILJS_PUBLIC_KEY);
 
 // Localized WhatsApp Group Links
 const WHATSAPP_GROUP_LINKS: Record<Language, string> = {
@@ -208,18 +211,19 @@ const App: React.FC = () => {
     setFormStatus('submitting');
 
     try {
-      // Send automated Confirmation Email to User
+      // Send data to EmailJS
+      // This will send to the address configured in your EmailJS template.
+      // We pass 'wisdomnuelmmesoma@gmail.com' as to_email for use in the template.
       await emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
         {
-          to_email: email,
-          to_phone: phone,
+          to_email: 'wisdomnuelmmesoma@gmail.com', // Recipient (You)
+          from_email: email, // The user who joined
+          from_phone: phone,
           selected_language: selectedLang,
-          message: "Welcome to Pray4India! You have been successfully registered for daily prayer points.",
-          admin_email: 'wisdomnuelmmesoma@gmail.com' // Send notice to admin
-        },
-        EMAILJS_PUBLIC_KEY
+          message: `New User Joined! Email: ${email}, Phone: ${phone}, Language: ${selectedLang}`
+        }
       );
 
       setFormStatus('success');
