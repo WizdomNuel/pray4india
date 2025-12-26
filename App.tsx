@@ -546,11 +546,11 @@ const App: React.FC = () => {
 
       <section id="contact" className="py-24 bg-white dark:bg-slate-950">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-24 items-start">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-start">
             <div className="space-y-12">
               <h2 className="text-4xl lg:text-6xl font-bold text-slate-900 dark:text-white leading-tight uppercase tracking-tighter">{t.contact.title}</h2>
               <p className="text-xl lg:text-3xl text-slate-500 dark:text-slate-400 font-medium">{t.contact.desc}</p>
-              <div className="space-y-12 pt-14 border-t border-slate-100 dark:border-slate-800 flex items-center gap-6 md:gap-10">
+              <div className="pt-14 border-t border-slate-100 dark:border-slate-800 flex items-center gap-6 md:gap-10">
                 <Mail className="w-8 h-8 md:w-10 md:h-10 text-orange-600 flex-shrink-0" />
                 <div className="min-w-0">
                   <div className="text-xs font-bold text-slate-400 uppercase tracking-widest">{t.contact.support}</div>
